@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "96352237442",
+    "firebase_url": "https://shoptm-8235d.firebaseio.com",
+    "project_id": "shoptm-8235d",
+    "storage_bucket": "shoptm-8235d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96352237442:android:a68ab9c046a3465d",
+        "android_client_info": {
+          "package_name": "com.example.shoptm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "96352237442-p69il9j6v1epdrdj5mhcnmv8q3ico8ui.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shoptm",
+            "certificate_hash": "5ddaa74b2faf8b8b2fad9c0c4e0a1c50f405e450"
+          }
+        },
+        {
+          "client_id": "96352237442-kd6n4cm2g5bvepmkr2k0kqamuupausqe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5BI0_maSZk0hiPS6Kq7sQ2Nb3JofVuOM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "96352237442-kd6n4cm2g5bvepmkr2k0kqamuupausqe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

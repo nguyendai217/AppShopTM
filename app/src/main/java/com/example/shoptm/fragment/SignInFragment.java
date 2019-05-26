@@ -82,7 +82,9 @@ public class SignInFragment extends Fragment {
         imvClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
             }
         });
     }
@@ -110,11 +112,8 @@ public class SignInFragment extends Fragment {
                                 progressBar.setVisibility(View.INVISIBLE);
                                 Toast.makeText(getActivity(), "Đăng nhập thất bại !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
-
                         }
                     });
-
-
         }
     }
 

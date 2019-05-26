@@ -68,8 +68,8 @@
             android:layout_marginEnd="40dp"
             android:ems="10"
             android:hint="Password"
-            android:textColor="#1A1717"
             android:inputType="textPassword"
+            android:textColor="#1A1717"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edt_Email" />
@@ -106,13 +106,25 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="8dp"
+            android:text="Chưa có tài khoản, đăng kí"
             android:textColor="#1A1717"
             android:textSize="18sp"
-            android:text="Chưa có tài khoản, đăng kí"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_signIn" />
 
+        <ProgressBar
+            android:id="@+id/progressbar_signIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 

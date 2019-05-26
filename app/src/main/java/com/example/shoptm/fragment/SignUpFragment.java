@@ -7,9 +7,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,8 +18,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.shoptm.MainActivity;
 import com.example.shoptm.R;
+import com.example.shoptm.activity.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -130,7 +127,7 @@ public class SignUpFragment extends Fragment {
                                             getActivity().finish();
                                         } else {
                                             progressBar.setVisibility(View.INVISIBLE);
-                                            Toast.makeText(getActivity(), "Đăng kí thất bại.." + task.getException(), Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getActivity(), "Đăng kí thất bại.." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                         }
                                     }
                                 });

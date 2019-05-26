@@ -4,8 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.SplashActivity">
+    tools:context=".activity.RegisterActivity">
 
+    <FrameLayout
+        android:id="@+id/register_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-
+    </FrameLayout>
 </android.support.constraint.ConstraintLayout>

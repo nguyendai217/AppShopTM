@@ -11,11 +11,15 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.shoptm.R;
 import com.example.shoptm.adapter.CategoryAdapter;
+import com.example.shoptm.adapter.HorizontalProductAdapter;
 import com.example.shoptm.adapter.SliderAdapter;
 import com.example.shoptm.model.Category;
+import com.example.shoptm.model.HorizontalProduct;
 import com.example.shoptm.model.Slider;
 
 import java.util.ArrayList;
@@ -39,6 +43,11 @@ public class HomeFragment extends Fragment {
     final private long DELAY_TIME = 3000;
     final private long PERIOD_TIME = 3000;
 
+    // horizontal product
+    private RecyclerView horizontalProductRecyclerview;
+    private List<HorizontalProduct> horizontalProductList= new ArrayList<>();
+    private HorizontalProductAdapter horizontalProductAdapter;
+    private Button btnViewAll;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -51,11 +60,15 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         categoryRecyclerView = view.findViewById(R.id.category_recyclerview);
         bannerSliderPager = view.findViewById(R.id.banner_slider_viewpager);
+        horizontalProductRecyclerview= view.findViewById(R.id.recyclerview_horizontal);
+        btnViewAll= view.findViewById(R.id.btnViewAll);
 
         setRecyclerViewCategory(); // thiet lap recycler view Category
         setBanerSliderpager();  // thieet lap banner slider
+        setHorizontalRecyclerView();
         return view;
     }
+
 
     private void setRecyclerViewCategory() {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -88,7 +101,6 @@ public class HomeFragment extends Fragment {
 
         sliderAdapter = new SliderAdapter(listSlider, getActivity());
         bannerSliderPager.setClipToPadding(false);
-        bannerSliderPager.setPageMargin(20);
         bannerSliderPager.setAdapter(sliderAdapter);
 
         ViewPager.OnPageChangeListener onPageChangeListener = new ViewPager.OnPageChangeListener() {
@@ -158,6 +170,32 @@ public class HomeFragment extends Fragment {
     }
     private void stopBannerShow(){
         timer.cancel();
+    }
+
+    private void setHorizontalRecyclerView() {
+        LinearLayoutManager layoutManager1 = new LinearLayoutManager(getActivity());
+        layoutManager1.setOrientation(LinearLayoutManager.HORIZONTAL);
+        horizontalProductRecyclerview.setLayoutManager(layoutManager1);
+
+        horizontalProductList.add(new HorizontalProduct(R.mipmap.logo,"Redmi 5","SND 450 process","$220"));
+        horizontalProductList.add(new HorizontalProduct(R.mipmap.logo,"Redmi 5","SND 450 process","$220"));
+        horizontalProductList.add(new HorizontalProduct(R.mipmap.logo,"Redmi 5","SND 450 process","$220"));
+        horizontalProductList.add(new HorizontalProduct(R.mipmap.logo,"Redmi 5","SND 450 process","$220"));
+        horizontalProductList.add(new HorizontalProduct(R.mipmap.logo,"Redmi 5","SND 450 process","$220"));
+        horizontalProductList.add(new HorizontalProduct(R.mipmap.logo,"Redmi 5","SND 450 process","$220"));
+        horizontalProductList.add(new HorizontalProduct(R.mipmap.logo,"Redmi 5","SND 450 process","$220"));
+
+        horizontalProductAdapter= new HorizontalProductAdapter(horizontalProductList,getActivity());
+        horizontalProductRecyclerview.setAdapter(horizontalProductAdapter);
+        horizontalProductAdapter.notifyDataSetChanged();
+
+        btnViewAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "View All", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
 

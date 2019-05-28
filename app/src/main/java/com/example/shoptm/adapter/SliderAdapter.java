@@ -14,12 +14,12 @@ import com.example.shoptm.model.Slider;
 import java.util.List;
 
 public class SliderAdapter extends PagerAdapter {
-private List<Slider>sliderList;
-Context context;
+    private List<Slider> sliderList;
+    Context context;
 
     public SliderAdapter(List<Slider> sliderList, Context context) {
         this.sliderList = sliderList;
-        this.context= context;
+        this.context = context;
     }
 
     @Override
@@ -29,23 +29,22 @@ Context context;
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-        return view== object;
+        return view == object;
     }
 
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        View view= LayoutInflater.from(context).inflate(R.layout.slider_layout,container,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.slider_layout, container, false);
 
-        ImageView banerSlider= view.findViewById(R.id.banner_slider);
+        ImageView banerSlider = view.findViewById(R.id.banner_slider);
         banerSlider.setImageResource(sliderList.get(position).getBanner());
-        container.addView(view,0);
+        container.addView(view, 0);
         return view;
-
     }
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        container.removeView((View)object);
+        container.removeView((View) object);
     }
 }
